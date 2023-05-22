@@ -1,31 +1,55 @@
 pipeline {
     agent any
+    environment {
+        MICRO = 'academy'
+   
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo "${USER}"
+              //  sh "printenv | sort"
+            }
+        }
+         stage('Build1') {
+            steps {
+                echo 'building'
+            }
+        }
+         stage('Build2') {
+              when{
+                  not {
+                 branch "master"
+                  }
+             }
+            steps {
+                echo 'Building..'
+            }
+        }
+         stage('Build3') {
+             when {
+                 not{
+                branch "devops"
+                 }
+             }
+            steps {
+                echo 'Building..'
+            }
+        }
+    }
+    post { 
+        aborted { 
+            echo 'ABORTED'
+        }
+         success { 
+            echo 'SUCCESS'
+        }
+         failure { 
+            echo 'FAILURE'
+        }
+        changed { 
+            echo 'FAILURE'
+        }
+    }
     
-    stages('Build') {
-        step {
-            echo 'Build'
-        }
-    }
-    stages('Build1') {
-        step {
-            echo 'Build1'
-        }
-    }
-    stages('Build2') {
-        step {
-            echo 'Build2' 
-        }
-    }
-    stages('Build3') {
-        step {
-            echo 'Build3'
-        }
-    }
 }
-
-    
-    
-    
-    
-
-
