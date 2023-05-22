@@ -19,7 +19,7 @@ node{
    // writeFile file: 'abc.sh', text: 'ls -lrt'
    // sshScript remote: remote, script: "abc.sh"
       sshCommand remote : remote, command: "sudo mkdir ssh_file123"
-      sshCommand remote : remote, command: "cd ssh_files"
+      sshCommand remote : remote, command: "cd ssh_steps123"
      sshCommand remote : remote, command: "pwd"
   }  
         }
