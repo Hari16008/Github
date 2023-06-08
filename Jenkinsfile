@@ -8,20 +8,20 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t alpine_jenkins .'
+              bat 'docker build -t ubuntu_jenkins .'
             }
         }
          stage('Tag Image') {
            
             steps {
-               bat 'docker tag alpine_jenkins:latest hari16008/alpine:latest'
+               bat 'docker tag ubuntu_jenkins:latest hari16008/ubuntu:latest'
             }
         }
          stage('Push Image') {
           
             steps {
                bat 'docker login -u hari16008 -p hAri@1101'
-                bat 'docker push alpine_jenkins:latest'
+                bat 'docker push hari16008/ubuntu_jenkins:latest'
             }
         }
     }
