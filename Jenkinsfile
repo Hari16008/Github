@@ -8,13 +8,13 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              sh 'docker build -t jenkins_task .'
+              bat 'docker build -t jenkins_task .'
             }
         }
          stage('Tag Image') {
            
             steps {
-               sh 'docker tag jenkins_task:latest hari16008/jenkins_task:latest'
+               bat 'docker tag jenkins_task:latest hari16008/jenkins_task:latest'
             }
         }
          stage('Push Image') {
