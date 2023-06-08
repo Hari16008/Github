@@ -12,8 +12,7 @@ pipeline {
             }
         }
          stage('Tag Image') {
-           
-            steps {
+              steps {
                bat 'docker tag jenkins_task:latest hari16008/jenkins_task:latest'
             }
         }
@@ -27,7 +26,7 @@ pipeline {
          stage('Run Image') {
           
             steps {
-                bat docker run --name jenkinsC1 -p 7780:80 -d jenkins_task
+                bat docker run --name jenkinsC1 -p 7780:80 -d jenkins_task:latest
             }
         }
     }
