@@ -24,9 +24,8 @@ pipeline {
             }
          }
          stage('Run Image') {
-          
-            steps {
-                bat docker run --name jenkinsC1 -p 7780:80 -d jenkins_task:latest
+              steps {
+                bat 'docker run --name jenkinsC1 -p 7780:80 -d jenkins_task:latest'
             }
         }
     }
