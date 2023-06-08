@@ -23,6 +23,12 @@ pipeline {
                bat 'docker login -u hari16008 -p hAri@1101'
                 bat 'docker push hari16008/jenkins_task:latest'
             }
+         }
+         stage('Run Image') {
+          
+            steps {
+                bat docker run --name jenkinsC1 -p 7780:80 -d jenkins_task
+            }
         }
     }
     post { 
