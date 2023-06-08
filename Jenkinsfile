@@ -14,7 +14,7 @@ pipeline {
          stage('Tag Image') {
            
             steps {
-               sh 'docker tag jenkins_task:latest hari16008/nginx:latest'
+               sh 'docker tag jenkins_task:latest hari16008/jenkins_task:latest'
             }
         }
          stage('Push Image') {
