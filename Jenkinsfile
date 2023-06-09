@@ -25,7 +25,7 @@ pipeline {
          }
          stage('Run Image') {
               steps {
-                bat 'docker run --name jenkinsC2 -p 7780:80 -d nodejs_task:latest'
+                bat 'docker run --name jenkinsC2 -p 7781:3070 -d nodejs_task:latest'
             }
         }
     }
