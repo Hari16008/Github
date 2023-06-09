@@ -1,7 +1,3 @@
-FROM nginx
-
-RUN apt-get update
-
 # from base image node
 ARG NODE_VERSION=8.11-slim
 FROM node:$NODE_VERSION
