@@ -1,3 +1,3 @@
 FROM nginx
 
-Run apt get-update
+Run apt -get update
