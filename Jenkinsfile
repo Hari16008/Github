@@ -7,24 +7,20 @@ pipeline {
             }
         }
         stage('docker compose stop') {
-          
             steps {
                bat 'docker-compose down'
             }
         }
            stage('docker compose start') {
-          
-            steps {
+              steps {
                bat 'docker-compose up -d'
             }
         }
-        
         stage('push image') {
-          
-            steps {
+              steps {
                bat 'docker login -u hari16008 -p hAri@1101'
-                bat 'docker push hari16008/compsose_docker_build:latest'
-                // bat 'docker push hari16008/compose_docker_build:latest'
+                bat 'docker push hari16008/nginx'
+                // bat 'docker push hari16008/nginx'
             }
         }
     }
