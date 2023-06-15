@@ -15,8 +15,8 @@ pipeline {
          stage('push image') {
           
             steps {
-               sh 'sudo docker login -u hari16008 -p hAri@1101'
-                sh 'sudo docker push hari16008/compose_nginx_build:latest'
+               bat 'docker login -u hari16008 -p hAri@1101'
+                bat 'docker push hari16008/compose_nginx_build:latest'
             }
         }
     }
