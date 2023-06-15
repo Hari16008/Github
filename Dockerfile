@@ -1,3 +1,2 @@
 FROM nginx
-
-RUN apt-get update
+COPY microcare.html /usr/share/nginx/html
