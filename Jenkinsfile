@@ -6,10 +6,25 @@ pipeline {
               checkout scm
             }
         }
-         stage('Build Image') {
+        stage('docker compose stop') {
+          
             steps {
-              bat 'docker-compose up -d'
-           
+               sh 'docker-compose down'
+            }
+        }
+           stage('docker compose start') {
+          
+            steps {
+               sh 'docker-compose up -d'
+            }
+        }
+        
+         stage('push image') {
+          
+            steps {
+               sh 'sudo docker login -u hari16008 -p hAri@1101'
+                sh 'sudo docker push hari16008/new_image:latest'
+               // sh 'sudo docker push hari16008/new_image:latest'
             }
         }
     }
