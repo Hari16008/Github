@@ -23,8 +23,8 @@ pipeline {
           
             steps {
                sh 'sudo docker login -u hari16008 -p hAri@1101'
-                sh 'sudo docker push hari16008/new_image:latest'
-               // sh 'sudo docker push hari16008/new_image:latest'
+                sh 'sudo docker push hari16008/compose_nginx_build:latest'
+               // sh 'sudo docker push hari16008/compose_nginx_build:latest'
             }
         }
     }
