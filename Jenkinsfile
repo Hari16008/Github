@@ -19,8 +19,8 @@ pipeline {
         stage('push image') {
               steps {
                bat 'docker login -u hari16008 -p hAri@1101'
-                bat 'docker push hari16008/nginx'
-                // bat 'docker push hari16008/nginx'
+                bat 'docker push hari16008/new_image'
+                // bat 'docker push hari16008/new_image'
             }
         }
     }
