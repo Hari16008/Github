@@ -30,7 +30,7 @@ volumes:
          vol1_nginx:
             name: vol1_nginx
             external: true
-         compose_nginx_build:
-            name: compose_nginx_build
+         image123:
+            name:image123
             external: false
             
