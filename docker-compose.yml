@@ -14,7 +14,7 @@ services:
                - "7799:80"
          container_name: WEB1
          volumes:
-               - "vol2_nginx:/opt/composer/"
+               - "vol1_nginx:/opt/composer/"
          depends_on:
                - "DB"
                - "MID"
@@ -25,8 +25,12 @@ services:
                - "7798:80"
          container_name: MID1
          volumes:
-               - "vol2_nginx:/opt/MID/"
+               - "vol1_nginx:/opt/MID/"
 volumes:
          vol1_nginx:
-            name: vol2_nginx
+            name: vol1_nginx
+            external: true
+         compose_nginx_build:
+            name: compose_nginx_build
             external: false
+            
